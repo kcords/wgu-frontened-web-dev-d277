@@ -1,0 +1,69 @@
+/* 1. each of the following styles for text:
+  • one font-family declaration
+  • a :hover pseudo-class to create a rollover effect for navigation buttons
+2. a float property to position at least one HTML element to the side of another in your web page
+3. absolute and relative positioning in at least one area of your web page
+4. each of the following selectors:
+  x• one element selector to style the HTML elements
+  • one class selector that is used at least two times to style HTML elements
+  • one ID selector to format specific elements of a page */
+
+body {
+  margin: 0;
+}
+
+.page-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: .1rem 1rem;
+  background-color: darkgrey;
+  box-shadow: 0 1px 3px gray;
+}
+
+.page-nav {
+  flex: 1 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  line-height: 2;
+}
+
+main {
+  margin: 1rem;
+}
+
+#contact-form {
+  display: flex;
+  flex-flow: column;
+  gap: .25rem;
+  padding: .5rem 1.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+#contact-form h3 {
+  margin: 0;
+}
+
+.card {
+  float: right;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px lightgray;
+}
+
+.card img {
+  border-radius: 4px 4px 0 0;
+}
