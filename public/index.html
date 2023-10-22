@@ -5,18 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="js/main.js" defer></script>
   <title>Explore Washington State</title>
 </head>
 
 <body>
   <header class="page-header">
-    <img src="images/Seal_of_Washington.svg" alt="Seal of the State of Washington" height="40px">
-    <h1>The State of Washington</h1>
+    <div class="hero">
+      <img src="images/Seal_of_Washington.svg" alt="Seal of the State of Washington" height="40px">
+      <h1>The&nbsp;State&nbsp;of Washington</h1>
+    </div>
     <nav class="page-nav">
       <ul>
-        <li><a href="olympia.html">&#11088; Olympia</a></li>
-        <li><a href="seattle.html">Seattle</a></li>
-        <li><a href="vancouver.html">Vancouver</a></li>
+        <li><a href="olympia.html" class="nav-link">&#11088; Olympia</a></li>
+        <li><a href="seattle.html" class="nav-link">Seattle</a></li>
+        <li><a href="vancouver.html" class="nav-link">Vancouver</a></li>
       </ul>
     </nav>
   </header>
@@ -38,14 +41,17 @@
       <p></p>
 
       <aside class="card">
-        <img src="images/mt_rainier.jpeg" height="400">
-        <p>Test aside content</p>
+        <figure>
+          <img src="images/mt_rainier.jpeg" alt="Mt. Rainier at sunset" width="400">
+          <figcaption>A small glimpse into the natural beauty of Washington state, Mt. Rainier stands tall showing its majestic beauty, inviting all to come explore.</figcaption>
+        </figure>
       </aside>
+
       <h3>Natural Beauty</h3>
       <p></p>
 
       <h4>National Parks and Forests</h4>
-      <ul>
+      <ul class="list">
         <li>Mount Rainier National Park</li>
         <li>Olympic National Park</li>
         <li>North Cascades National Park</li>
@@ -53,7 +59,7 @@
       </ul>
 
       <h4>Other Noteworthy Sites</h4>
-      <ul>
+      <ul class="list">
         <li>Columbia River Gorge</li>
         <li>San Juan Islands</li>
         <li>Hoh Rainforest</li>
@@ -65,32 +71,88 @@
       x. a link that opens an external website in a new window or tab using the target attribute
       2. an HTML-coded ordered list with at least three list items
       x 3. an HTML-coded unordered list with at least three list items
-      4. an HTML-coded table consisting of 3–6 columns and 3–6 rows to organize content -->
+      x 4. an HTML-coded table consisting of 3–6 columns and 3–6 rows to organize content -->
 
-      <table>
-        <tr>
-          <th>stuff</th>
-        </tr>
-        <tr>
-          <td>test</td>
-        </tr>
+      <table id="largest-cities-table">
+        <thead>
+          <tr id="table-header">
+            <th class="col" colspan="3">Largest Cities by Population</th>
+          </tr>
+          <tr>
+            <th class="col col-header">Rank</th>
+            <th class="col col-header">City</th>
+            <th class="col col-header">Population</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col">1</td>
+            <td class="col">Seattle</td>
+            <td class="col">749,256</td>
+          </tr>
+          <tr>
+            <td class="col">2</td>
+            <td class="col">Spokane</td>
+            <td class="col">230,160</td>
+          </tr>
+          <tr>
+            <td class="col">3</td>
+            <td class="col">Tacoma</td>
+            <td class="col">221,776</td>
+          </tr>
+          <tr>
+            <td class="col">4</td>
+            <td class="col">Vancouver</td>
+            <td class="col">194,512</td>
+          </tr>
+          <tr>
+            <td class="col">5</td>
+            <td class="col">Bellevue</td>
+            <td class="col">152,767</td>
+          </tr>
+          <tr>
+            <td class="col">6</td>
+            <td class="col">Kent</td>
+            <td class="col">134,392</td>
+          </tr>
+          <tr>
+            <td class="col">7</td>
+            <td class="col">Everett</td>
+            <td class="col">111,337</td>
+          </tr>
+          <tr>
+            <td class="col">8</td>
+            <td class="col">Spokane Valley</td>
+            <td class="col">107,325</td>
+          </tr>
+          <tr>
+            <td class="col">9</td>
+            <td class="col">Renton</td>
+            <td class="col">104,047</td>
+            </tr>
+            <tr>
+            <td class="col">10</td>
+            <td class="col">Federal Way</td>
+            <td class="col">97,863</td>
+            </tr>
+        </tbody>
       </table>
 
-      <form id="contact-form" action="/" method="post">
+      <form id="contact-form" action="/" onsubmit="return validateContactForm()" method="post">
         <h3>Contact us</h3>
 
         <label for="first-name">First Name</label>
-        <input id="first-name" type="text" placeholder="e.g. Jane" />
+        <input id="first-name" type="text" placeholder="e.g. Jane" required />
 
         <label for="last-name">Last Name</label>
-        <input id="last-name" type="text" placeholder="e.g. Doe" />
+        <input id="last-name" type="text" placeholder="e.g. Doe" required />
 
         <label for="email">Email Address</label>
-        <input id="email" type="email" placeholder="e.g. jane.doe@emailprovider.com" />
+        <input id="email" type="email" placeholder="e.g. jane.doe@emailprovider.com" onblur="validateEmailMatch()" required />
 
-        <!-- TODO Include JavaScript code that verifies the email fields match when a user enters a second email address. -->
         <label for="email-confirm">Confirm Email</label>
-        <input id="email-confirm" type="email" placeholder="e.g. jane.doe@emailprovider.com" />
+        <input id="email-confirm" type="email" placeholder="e.g. jane.doe@emailprovider.com" onblur="validateEmailMatch()"
+          required />
 
         <label for="question">Ask a question</label>
         <input id="question" placeholder="e.g. Why is Washington State so beautiful?" />

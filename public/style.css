@@ -1,15 +1,15 @@
 /* 1. each of the following styles for text:
-  • one font-family declaration
+                                x one font-family declaration
   • a :hover pseudo-class to create a rollover effect for navigation buttons
-2. a float property to position at least one HTML element to the side of another in your web page
+x2. a float property to position at least one HTML element to the side of another in your web page
 3. absolute and relative positioning in at least one area of your web page
-4. each of the following selectors:
-  x• one element selector to style the HTML elements
-  • one class selector that is used at least two times to style HTML elements
-  • one ID selector to format specific elements of a page */
+x4. each of the following selectors: x one element selector to style the HTML elements x one class selector that is used at least two times to style HTML elements x one ID selector to format specific elements of a page */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500,600,700&display=swap');
 
 body {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .page-header {
@@ -21,7 +21,15 @@ body {
   margin: 0;
   padding: .1rem 1rem;
   background-color: darkgrey;
-  box-shadow: 0 1px 3px gray;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, .8);
+}
+
+.hero {
+  flex: 1 0;
+  display: flex;
+  gap: .75rem;
+  justify-content: begin;
+  align-items: center;
 }
 
 .page-nav {
@@ -35,13 +43,95 @@ nav ul {
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
-  gap: 1rem;
+  list-style-position: inside;
+  gap: .5rem;
   align-items: center;
+  padding: none;
   line-height: 2;
 }
 
+.nav-link {
+  display: inline-block;
+  padding: .5rem 0;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  border: 2px solid gray;
+  border-radius: 5px;
+  color: azure;
+  min-width: 100px;
+}
+
+.nav-link:hover {
+  border-color: ghostwhite;
+  background-color: lightslategray;
+  color: ghostwhite;
+}
+
 main {
-  margin: 1rem;
+  padding: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+  float: right;
+  width: 500px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+}
+
+figure {
+  margin: 0;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+figcaption {
+  padding: 1rem 0;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.list {
+  margin-bottom: 1.5rem;
+}
+
+#largest-cities-table {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+#table-header {
+  background-color: white;
+  position: relative;
+  top: -28px;
+  margin-bottom: -28px;
+  font-size: 1.1rem;
+}
+
+.col-header {
+  position: relative;
+  top: -14px;
+  margin-bottom: -14px;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgrey;
+  font-weight: 800;
+}
+
+.col {
+  padding: 0 1rem;
 }
 
 #contact-form {
@@ -49,6 +139,7 @@ main {
   flex-flow: column;
   gap: .25rem;
   padding: .5rem 1.5rem;
+  clear: right;
   border: 1px solid lightgrey;
   border-radius: 5px;
 }
@@ -57,13 +148,45 @@ main {
   margin: 0;
 }
 
-.card {
-  float: right;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px lightgray;
+@media (max-width: 800px) {
+  aside.card {
+    width: 100%;
+  }
 }
 
-.card img {
-  border-radius: 4px 4px 0 0;
+@media (max-width: 768px) {
+  .page-header {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    width: min-content;
+  }
+
+  .page-nav {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .page-nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .page-nav ul li {
+    width: 100%;
+    margin-left: -35px;
+  }
+
+  .nav-link {
+    min-width: 100%;
+  }
 }
