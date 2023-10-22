@@ -139,25 +139,35 @@
       </table>
 
       <form id="contact-form" action="/" onsubmit="return validateContactForm()" method="post">
-        <h3>Contact us</h3>
+          <h3>Contact us</h3>
 
-        <label for="first-name">First Name</label>
-        <input id="first-name" type="text" placeholder="e.g. Jane" required />
+          <label for="first-name" class="contact-input">
+            First Name
+            <input id="first-name"type="text" placeholder="e.g. Jane" required />
+          </label>
 
-        <label for="last-name">Last Name</label>
-        <input id="last-name" type="text" placeholder="e.g. Doe" required />
+          <label for="last-name" class="contact-input">
+            Last Name
+            <input id="last-name"type="text" placeholder="e.g. Doe" required />
+          </label>
 
-        <label for="email">Email Address</label>
-        <input id="email" type="email" placeholder="e.g. jane.doe@emailprovider.com" onblur="validateEmailMatch()" required />
+          <label for="email" class="contact-input">
+            Email Address
+            <input id="email"type="email" placeholder="e.g. jane.doe@emailprovider.com" onblur="validateEmailMatch()" required />
+          </label>
 
-        <label for="email-confirm">Confirm Email</label>
-        <input id="email-confirm" type="email" placeholder="e.g. jane.doe@emailprovider.com" onblur="validateEmailMatch()"
-          required />
+          <label for="email-confirm" class="contact-input">
+            Confirm Email
+            <input id="email-confirm"type="email" placeholder="e.g. jane.doe@emailprovider.com" onblur="validateEmailMatch()"
+            required />
+          </label>
 
-        <label for="question">Ask a question</label>
-        <input id="question" placeholder="e.g. Why is Washington State so beautiful?" />
+          <label for="question" class="contact-input">
+            Ask a question
+            <input id="question"type="text" placeholder="e.g. Why is Washington State so beautiful?" />
+          </label>
 
-        <button action="submit">Submit</button>
+          <button action="submit">Submit</button>
       </form>
     </section>
   </main>

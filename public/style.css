@@ -1,8 +1,8 @@
 /* 1. each of the following styles for text:
-                                x one font-family declaration
-  • a :hover pseudo-class to create a rollover effect for navigation buttons
+    x one font-family declaration
+    x a :hover pseudo-class to create a rollover effect for navigation buttons
 x2. a float property to position at least one HTML element to the side of another in your web page
-3. absolute and relative positioning in at least one area of your web page
+3. absolute and x relative positioning in at least one area of your web page
 x4. each of the following selectors: x one element selector to style the HTML elements x one class selector that is used at least two times to style HTML elements x one ID selector to format specific elements of a page */
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500,600,700&display=swap');
@@ -78,6 +78,11 @@ p {
   margin-bottom: 1.5rem;
 }
 
+h2, h3, h4 {
+  margin-top: 0;
+  margin-bottom: .25rem;
+}
+
 .card {
   margin-bottom: 1.5rem;
   float: right;
@@ -103,6 +108,7 @@ figcaption {
 }
 
 .list {
+  margin-top: 0;
   margin-bottom: 1.5rem;
 }
 
@@ -138,14 +144,25 @@ figcaption {
   display: flex;
   flex-flow: column;
   gap: .25rem;
-  padding: .5rem 1.5rem;
+  margin: 3rem auto;
+  padding: 1.5rem;
   clear: right;
   border: 1px solid lightgrey;
   border-radius: 5px;
+  align-items: center;
 }
 
 #contact-form h3 {
   margin: 0;
+}
+
+.contact-input {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: .5rem;
+  width: 50%;
+  min-width: 300px;
+  gap: .25rem;
 }
 
 @media (max-width: 800px) {
@@ -188,5 +205,13 @@ figcaption {
 
   .nav-link {
     min-width: 100%;
+  }
+
+  #largest-cities-table {
+    width: 100%;
+  }
+
+  .contact-input {
+    width: 100%;
   }
 }
